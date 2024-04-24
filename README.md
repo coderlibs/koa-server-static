@@ -39,3 +39,14 @@ const path = require('path');
 app.use(static(path.join(__dirname + '/public/pc'),{facility:'pc'})); // 当设备为电脑端时(Personal Computer)获取端静态资源
 
 app.use(static(path.join(__dirname + '/public/app'),{facility:'md'})); // 当设备为手机端时(Mobile Device)获取端静态资源
+```
+## 示例2 defer
+```js
+const Koa = require('koa');
+const app = new Koa();
+const static = require('koa-server-static');
+const path = require('path');
+// defer代表是否需要最后执行此中间件，不设置则立马执行
+app.use(static(path.join(__dirname + '/public'),{defer:true})); // 等待其他中间件执行完后最后再加载当前中间件
+
+```
