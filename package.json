@@ -7,7 +7,6 @@
     "type": "git",
     "url": "git+https://github.com/coderlibs/koa-server-static.git"
   },
-  
   "keywords": [
     "koa",
     "middleware",
