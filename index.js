@@ -27,6 +27,9 @@ module.exports = serve
 function serve (root, opts) {
 
   function checkOutFacility(ctx){
+    if (!opts.facility) {
+      return true;
+    }
     let userAgent = ctx.request.header['user-agent'].toLowerCase();
     let pat_phone = /ipad|iphone os|ipod|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/;
     let isMobile = pat_phone.test(userAgent);
