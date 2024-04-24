@@ -1,19 +1,47 @@
 {
   "name": "koa-server-static",
   "version": "1.0.0",
-  "description": "koa-static的增强版，支持动态选择pc端还是移动端的静态文件",
+  "description": "koa-static的增强版,支持动态选择pc端还是移动端的静态文件,coderlibs官方提供的Koa静态文件服务中间件",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/coderlibs/koa-server-static.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/coderlibs/koa-server-static/issues"
+  
+  "keywords": [
+    "koa",
+    "middleware",
+    "file",
+    "static",
+    "sendfile"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "istanbul": "^0.4.5",
+    "koa": "^2.5.1",
+    "mocha": "^5.2.0",
+    "supertest": "^3.1.0"
   },
-  "homepage": "https://github.com/coderlibs/koa-server-static#readme"
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^3.1.0",
+    "koa-send": "^5.0.0"
+  },
+  "scripts": {
+    "lint": "eslint --fix .",
+    "test": "mocha --harmony --reporter spec --exit",
+    "test-cov": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --exit",
+    "test-travis": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- --exit"
+  },
+  "engines": {
+    "node": ">= 7.6.0"
+  }
 }
